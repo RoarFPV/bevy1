@@ -1,0 +1,66 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'bevy1'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=bevy1",
+                    "--package=bevy1",
+                    "--features","bevy/trace_tracy",
+                ],
+                "filter": {
+                    "name": "bevy1",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Profile (Debug + Tracy) executable 'bevy1'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "-r",
+                    "--bin=bevy1",
+                    "--package=bevy1",
+                    "--features","bevy/trace_tracy",
+                ],
+                "filter": {
+                    "name": "bevy1",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'bevy1'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=bevy1",
+                    "--package=bevy1"
+                ],
+                "filter": {
+                    "name": "bevy1",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
